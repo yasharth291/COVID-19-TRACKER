@@ -1,3 +1,5 @@
+#code written by yasharth dubey
+#IIIT DWD 
 import tkinter
 from tkinter import IntVar
 import matplotlib.pyplot as plt
