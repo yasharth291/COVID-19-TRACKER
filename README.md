@@ -71,39 +71,3 @@ Recommended Sites to look for Dynamic DATA SETs of COVID-19
 • WHO site
 • Koggle
 • Gitub
-Select an authenticate site before finalising your data set. I have also included few sample
-DATA SETS.
-Examples :
-1. https://data.world/covid-19-data-resource-hub/covid-19-case-counts
-2. https://github.com/CSSEGISandData/COVID-19/issues/1250
-3. https://github.com/datasets/covid-19/tree/master/data
-4. https://data.world/covid-19-data-resource-hub/covid-19-case-counts
-5. https://github.com/CSSEGISandData/COVID-19/issues/1250
-6. https://github.com/datasets/covid-19/tree/master/data
-7. https://github.com/CSSEGISandData/COVID-19
-8. https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-
-dataset#time_series_covid_19_confirmed.csv
-
-Research Article Preparation Guidelines:
-1. Sections to be included in the WORD document :
-1. Enter Team details in the First Page ( ROLL Number, Problem Selected and Data
-File names and REFERENCE names)
-2. Second Page onwards :
-1. Purpose of the RESEARCH topic Study
-2. What are the important observations found in the Data Study done in this
-exercise
-3. Name of Data Files used and its reference to the site used for the study.
-4. List out what Data Types (eg:Strings, Arrays, Lists, Stacks, Queue,
-Dictionaries, Trees) or Data structures are used in Solving the problems
-5. Final Results description
-6. Name of the Document : Give a Proper Name and Include all your Roll
-NUMBER in the FIRST PAGE
-Note:
-Font to be used for documentation
-1. Arial 14 for Heading.
-2. Arial 12 for Text Body
-3. Word document format
-4. Number of WORD Pages to be Limited to Maximum Five.
-5. Content should be written by the TEAM in their own words. NO
-plagiarism is allowed. If found, TEAM/individual will be disqualified from
-the evaluation.
