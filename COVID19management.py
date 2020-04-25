@@ -1,4 +1,4 @@
-#code written by yasharth dubey
+#code written by YASHARTH DUBEY
 #IIIT DWD 
 import tkinter
 from tkinter import IntVar
@@ -76,51 +76,76 @@ try:
             image = ImageTk.PhotoImage(Image.open("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/images.png"))
             canvas.create_image( 199, 124 ,image = image)
             canvas.place(x = 0, y = 0)
-            tkinter.Label(window,text = "COUNTRY NAME:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
-            ent = tkinter.Entry(window,bd  = "2",bg = "skyblue2")
-            ent.place(x = 120 , y = 118)
-            var1 = 0
-            var2 = 1
+            tkinter.Label(window,text = "NUMBER OF COUNTRIES:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
+            ent1 = tkinter.Entry(window,bd  = "2",bg = "skyblue2")
+            ent1.place(x = 160 , y = 118)
+            var1 = IntVar()
+            var2 = IntVar()
             tkinter.Checkbutton(window,text = "BAR GRAPH",variable = var1,border = "0",bg = "skyblue2",onvalue = 1, offvalue = 0).place(x = 20, y = 148)
             tkinter.Checkbutton(window,text = "LINE GRAPH",variable = var2,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 150 , y = 148)
+            tkinter.Label(window,text = "*WE RECOMMEND YOU TO SEE BAR GRAPH FOR ONE COUNTRY",bg = "skyblue2",border = "0").place(x = 20 , y = 180)
             #to show the graph 
             def showwwac():
-                h = ent.get()
                 loc  = ("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/Deaths.xlsx")
                 wb = xlrd.open_workbook(loc)
                 sheet = wb.sheet_by_index(0)
                 loc1  = ("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/Confirmed.xlsx")
                 wb1 = xlrd.open_workbook(loc1)
                 sheet1 = wb1.sheet_by_index(0)
+                print(int(var1.get()))
+                print(int(var2.get()))
                 window.destroy()
-                j = 0
-                i = 5
-                while j < sheet1.nrows:
-                    i = 5
-                    if sheet.cell_value(j,2).upper() == h.upper():
-                        #to store the death/confirmed cases for every day
-                        a = []
-                        #to store the number of days
-                        b  = []
-                        while i < sheet.ncols:
-                            if float(sheet1.cell_value(j,i))>0:
-                                a.append(float(sheet.cell_value(j,i))/float(sheet1.cell_value(j,i)))
-                            else:
-                                a.append(0)
-                            b.append(int(i-4))
-                            i = i + 1
-                        if int(var2) == 1:
-                            #plotting a scatter graph for the data
-                            plt.scatter(b,a,color = "red", s = 20)
-                            #plotting a line graph for the same
-                            plt.plot(b,a,'r--')
-                        elif int(var1) ==  1:
-                            plt.bar(b,a,color = "red")
-                        plt.title(h.upper() + "\n" + sheet1.cell_value(j,1))
-                        plt.xlabel('DAY')
-                        plt.ylabel('DEATH/CONFIRMED CASES')
-                        plt.show()
-                    j = j + 1
+                window2 = tkinter.Tk()
+                window2.resizable(0,0)
+                window2.geometry("400x250")
+                window2.title("COVID-19 TRACKER")
+                canvas1 = tkinter.Canvas(window2,width = 400 , height = 250)
+                image1 = ImageTk.PhotoImage(Image.open("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/images.png"))
+                canvas1.create_image( 199, 124 ,image = image1)
+                canvas1.place(x = 0, y = 0)
+                tkinter.Label(window2,text = "TYPE THE COUNTRIES NAME WITH A COMMA IN END", bg ="skyblue2",border = "0").pack()
+                tkinter.Label(window2,text = "NAME OF COUNTRIES:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
+                ent = tkinter.Entry(window2,bd  = "2",bg = "skyblue2")
+                ent.place(x = 150 , y = 118)
+                def show():
+                    h = str(ent.get())
+                    a = ""
+                    b = []
+                    for i in range(0,len(h)):
+                        if(h[i]!=","):
+                            a = a + h[i]
+                        elif (h[i]==','):
+                            b.append(a)
+                            a = ""
+                    for i1 in b: 
+                        j = 0  
+                        while j < sheet1.nrows:
+                            i = 5
+                            if sheet.cell_value(j,2).upper() == i1.upper():
+                                #to store the death/confirmed cases for every day
+                                a1 = []
+                                #to store the number of days
+                                b1  = []
+                                while i < sheet.ncols:
+                                    if float(sheet1.cell_value(j,i))>0:
+                                        a1.append(float(sheet.cell_value(j,i))/float(sheet1.cell_value(j,i)))
+                                    else:
+                                        a1.append(0)
+                                    b1.append(int(i-4))
+                                    i = i + 1
+                                if int(var2.get()) == 1:
+                                    #plotting a line graph for the same
+                                    plt.plot(b1,a1,label= i1)
+                                elif int(var1.get()) ==  1:
+                                    plt.bar(b1,a1,label = i1)
+                                plt.xlabel('DAY')
+                                plt.ylabel('DEATH/CONFIRMED CASES')
+                                plt.legend()
+                            j = j + 1
+                    plt.title(b)
+                    plt.show()  
+                tkinter.Button(window2,text = "ENTER",bg = "cyan2",command = show).place( x = 260 , y = 200)
+                window2.mainloop()
             tkinter.Button(window,text = "ENTER",bg = "cyan2",command = showwwac).place( x = 260 , y = 200)
             window.mainloop()
         tkinter.Button(window2,text = "CURVE OF DEATH RATE",bg = "mediumpurple1",command = deathc).place(x = 240, y = 40)
@@ -214,42 +239,67 @@ try:
             image = ImageTk.PhotoImage(Image.open("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/images.png"))
             canvas.create_image( 199, 124 ,image = image)
             canvas.place(x = 0, y = 0)
-            var2 = 0
-            var3 = 1
+            var2 = IntVar()
+            var3 = IntVar()
             tkinter.Checkbutton(window,text = "BAR GRAPH",variable = var2,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 20, y = 148)
             tkinter.Checkbutton(window,text = "LINE GRAPH",variable = var3,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 150 , y = 148)
-            tkinter.Label(window,text = "COUNTRY NAME:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
+            tkinter.Label(window,text = "NUMBER OF COUNTRIES:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
             ent = tkinter.Entry(window,bd  = "2",bg = "skyblue2")
-            ent.place(x = 120 , y = 118)
+            ent.place(x = 160 , y = 118)
+            tkinter.Label(window,text = "*WE RECOMMEND YOU TO SEE BAR GRAPH FOR ONE COUNTRY",bg = "skyblue2",border = "0").place(x = 20 , y = 180)
             def showwwac():
-                h = ent.get()
                 loc  = ("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/Deaths.xlsx")
                 wb = xlrd.open_workbook(loc)
                 sheet = wb.sheet_by_index(0)
                 window.destroy()
-                j = 0
-                i = 5
-                while j < sheet.nrows:
-                    i = 6
-                    if sheet.cell_value(j,2).upper() == h.upper():
-                        da  = []
-                        d = []
-                        while i <  sheet.ncols:
-                            d.append(int(sheet.cell_value(j,i))-int(sheet.cell_value(j,i-1)))
-                            da.append(int(i-4))
-                            i = i + 1
-                        if int(var3) == 1:
-                            #plotting a scatter graph for the data
-                            plt.scatter(da,d,color = "red", s = 20)
-                            #plotting a line graph for the same
-                            plt.plot(da,d,'r--')
-                        elif int(var2) == 1:
-                            plt.bar(da,d,color = "red") 
-                        plt.title(h.upper() + "\n" + sheet.cell_value(j,1))
-                        plt.xlabel('DAY')
-                        plt.ylabel('DEATH')
-                        plt.show()
-                    j = j + 1
+                window2 = tkinter.Tk()
+                window2.resizable(0,0)
+                window2.geometry("400x250")
+                window2.title("COVID-19 TRACKER")
+                canvas1 = tkinter.Canvas(window2,width = 400 , height = 250)
+                image1 = ImageTk.PhotoImage(Image.open("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/images.png"))
+                canvas1.create_image( 199, 124 ,image = image1)
+                canvas1.place(x = 0, y = 0)
+                tkinter.Label(window2,text = "TYPE THE COUNTRIES NAME WITH A COMMA IN END", bg ="skyblue2",border = "0").pack()
+                tkinter.Label(window2,text = "NAME OF COUNTRIES:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
+                ent = tkinter.Entry(window2,bd  = "2",bg = "skyblue2")
+                ent.place(x = 150 , y = 118)
+                def show():
+                    h = str(ent.get())
+                    a = ""
+                    b = []
+                    for i in range(0,len(h)):
+                        if(h[i]!=","):
+                            a = a + h[i]
+                        elif (h[i]==','):
+                            b.append(a)
+                            a = ""
+                    for i1 in b: 
+                        j = 0  
+                        while j < sheet.nrows:
+                            i = 6
+                            if sheet.cell_value(j,2).upper() == i1.upper():
+                                #to store the death/confirmed cases for every day
+                                a1 = []
+                                #to store the number of days
+                                b1  = []
+                                while i < sheet.ncols:
+                                    a1.append(int(sheet.cell_value(j,i)))
+                                    b1.append(int(i-4))
+                                    i = i + 1
+                                if int(var3.get()) == 1:
+                                    #plotting a line graph for the same
+                                    plt.plot(b1,a1,label= i1)
+                                elif int(var2.get()) ==  1:
+                                    plt.bar(b1,a1,label = i1)
+                                plt.xlabel('DAY')
+                                plt.ylabel('DEATHS')
+                                plt.legend()
+                            j = j + 1
+                    plt.title(b)
+                    plt.show()  
+                tkinter.Button(window2,text = "ENTER",bg = "cyan2",command = show).place( x = 260 , y = 200)
+                window2.mainloop()
             tkinter.Button(window,text = "ENTER",bg = "cyan2",command = showwwac).place( x = 260 , y = 200)
             window.mainloop()
         tkinter.Button(window2,text = "CURVE OF DEATHS PER DAY",bg = "maroon",command = coc).place(x = 230 , y = 80)
@@ -264,42 +314,67 @@ try:
             image = ImageTk.PhotoImage(Image.open("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/images.png"))
             canvas.create_image( 199, 124 ,image = image)
             canvas.place(x = 0, y = 0)
-            tkinter.Label(window,text = "COUNTRY NAME:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
+            var2 = IntVar()
+            var3 = IntVar()
+            tkinter.Checkbutton(window,text = "BAR GRAPH",variable = var2,border = "0",bg = "skyblue2",onvalue = 1, offvalue = 0).place(x = 20, y = 148)
+            tkinter.Checkbutton(window,text = "LINE GRAPH",variable = var3,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 150 , y = 148)
+            tkinter.Label(window,text = "*WE RECOMMEND YOU TO SEE BAR GRAPH FOR ONE COUNTRY",bg = "skyblue2",border = "0").place(x = 20 , y = 180)
+            tkinter.Label(window,text = "NUMBER OF COUNTRIES:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
             ent = tkinter.Entry(window,bd  = "2",bg = "skyblue2")
-            ent.place(x = 120 , y = 118)
-            var1 = 0
-            var2 = 1
-            tkinter.Checkbutton(window,text = "BAR GRAPH",variable = var1,border = "0",bg = "skyblue2",onvalue = 1, offvalue = 0).place(x = 20, y = 148)
-            tkinter.Checkbutton(window,text = "LINE GRAPH",variable = var2,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 150 , y = 148)
+            ent.place(x = 160 , y = 118)
             def showwwac():
-                h = ent.get()
                 loc  = ("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/Confirmed.xlsx")
                 wb = xlrd.open_workbook(loc)
                 sheet = wb.sheet_by_index(0)
                 window.destroy()
-                j = 0
-                i = 5
-                while j < sheet.nrows:
-                    i = 6
-                    if sheet.cell_value(j,2).upper() == h.upper():
-                        da  = []
-                        d = []
-                        while i < sheet.ncols:
-                            d.append(int(sheet.cell_value(j,i))-int(sheet.cell_value(j,i-1)))
-                            da.append(int(i-1))
-                            i = i + 1
-                        if int(var2) == 1:
-                            #plotting a scatter graph for the data
-                            plt.scatter(da,d,color = "yellow", s = 20)
-                            #plotting a line graph for the same
-                            plt.plot(da,d,'y--')
-                        elif int(var1) == 1:
-                            plt.bar(da,d,color = "yellow") 
-                        plt.title(h.upper() + "\n" + sheet.cell_value(j,1))
-                        plt.xlabel('DAY')
-                        plt.ylabel('CONFIRMED')
-                        plt.show()
-                    j = j + 1
+                window2 = tkinter.Tk()
+                window2.resizable(0,0)
+                window2.geometry("400x250")
+                window2.title("COVID-19 TRACKER")
+                canvas1 = tkinter.Canvas(window2,width = 400 , height = 250)
+                image1 = ImageTk.PhotoImage(Image.open("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/images.png"))
+                canvas1.create_image( 199, 124 ,image = image1)
+                canvas1.place(x = 0, y = 0)
+                tkinter.Label(window2,text = "TYPE THE COUNTRIES NAME WITH A COMMA IN END", bg ="skyblue2",border = "0").pack()
+                tkinter.Label(window2,text = "NAME OF COUNTRIES:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
+                ent = tkinter.Entry(window2,bd  = "2",bg = "skyblue2")
+                ent.place(x = 160 , y = 118)
+                def show():
+                    h = str(ent.get())
+                    a = ""
+                    b = []
+                    for i in range(0,len(h)):
+                        if(h[i]!=","):
+                            a = a + h[i]
+                        elif (h[i]==','):
+                            b.append(a)
+                            a = ""
+                    for i1 in b: 
+                        j = 0  
+                        while j < sheet.nrows:
+                            i = 6
+                            if sheet.cell_value(j,2).upper() == i1.upper():
+                                #to store the death/confirmed cases for every day
+                                a1 = []
+                                #to store the number of days
+                                b1  = []
+                                while i < sheet.ncols:
+                                    a1.append(int(sheet.cell_value(j,i)))
+                                    b1.append(int(i-4))
+                                    i = i + 1
+                                if int(var3.get()) == 1:
+                                    #plotting a line graph for the same
+                                    plt.plot(b1,a1,label= i1)
+                                elif int(var2.get()) ==  1:
+                                    plt.bar(b1,a1,label = i1)
+                                plt.xlabel('DAY')
+                                plt.ylabel('DEATHS')
+                                plt.legend()
+                            j = j + 1
+                    plt.title(b)
+                    plt.show()  
+                tkinter.Button(window2,text = "ENTER",bg = "cyan2",command = show).place( x = 260 , y = 200)
+                window2.mainloop()
             tkinter.Button(window,text = "ENTER",bg = "cyan2",command = showwwac).place( x = 260 , y = 200)
             window.mainloop()
         tkinter.Button(window2,text = "CURVE OF CONFIRMED CASES PER DAY",bg = "yellow",command = coc1).place(x = 180 , y = 120)
@@ -314,42 +389,67 @@ try:
             image = ImageTk.PhotoImage(Image.open("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/images.png"))
             canvas.create_image( 199, 124 ,image = image)
             canvas.place(x = 0, y = 0)
-            tkinter.Label(window,text = "COUNTRY NAME:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
+            var2 = IntVar()
+            var3 = IntVar()
+            tkinter.Checkbutton(window,text = "BAR GRAPH",variable = var2,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 20, y = 148)
+            tkinter.Checkbutton(window,text = "LINE GRAPH",variable = var3,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 150 , y = 148)
+            tkinter.Label(window,text = "*WE RECOMMEND YOU TO SEE BAR GRAPH FOR ONE COUNTRY",bg = "skyblue2",border = "0").place(x = 20 , y = 180)
+            tkinter.Label(window,text = "NUMBER OF COUNTRIES:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
             ent = tkinter.Entry(window,bd  = "2",bg = "skyblue2")
-            ent.place(x = 120 , y = 118)
-            var1 = 0
-            var2 = 1
-            tkinter.Checkbutton(window,text = "BAR GRAPH",variable = var1,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 20, y = 148)
-            tkinter.Checkbutton(window,text = "LINE GRAPH",variable = var2,border = "0",bg = "skyblue2",onvalue = 1,offvalue = 0).place(x = 150 , y = 148)
+            ent.place(x = 160 , y = 118)
             def showwwac():
-                h = ent.get()
                 loc  = ("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/Recovered.xlsx")
                 wb = xlrd.open_workbook(loc)
                 sheet = wb.sheet_by_index(0)
                 window.destroy()
-                j = 0
-                i = 5
-                while j < sheet.nrows:
-                    i = 6
-                    if sheet.cell_value(j,2).upper() == h.upper():
-                        da  = []
-                        d = []
-                        while i < sheet.ncols:
-                            d.append(int(sheet.cell_value(j,i))-int(sheet.cell_value(j,i-1)))
-                            da.append(int(i-5))
-                            i = i + 1
-                        if int(var2) == 1:
-                            #plotting a scatter graph for the data
-                            plt.scatter(da,d,color = "green", s = 20)
-                            #plotting a line graph for the same
-                            plt.plot(da,d,'g--')
-                        elif int(var1) == 1:
-                            plt.bar(da,d,color = "green")
-                        plt.title(h.upper() + "\n" + sheet.cell_value(j,1))
-                        plt.xlabel('DAY')
-                        plt.ylabel('RECOVERED')
-                        plt.show()
-                    j = j + 1
+                window2 = tkinter.Tk()
+                window2.resizable(0,0)
+                window2.geometry("400x250")
+                window2.title("COVID-19 TRACKER")
+                canvas1 = tkinter.Canvas(window2,width = 400 , height = 250)
+                image1 = ImageTk.PhotoImage(Image.open("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/images.png"))
+                canvas1.create_image( 199, 124 ,image = image1)
+                canvas1.place(x = 0, y = 0)
+                tkinter.Label(window2,text = "TYPE THE COUNTRIES NAME WITH A COMMA IN END", bg ="skyblue2",border = "0").pack()
+                tkinter.Label(window2,text = "NAME OF COUNTRIES:",bg = "skyblue2",border = "0").place(x = 20, y = 120)
+                ent = tkinter.Entry(window2,bd  = "2",bg = "skyblue2")
+                ent.place(x = 150 , y = 118)
+                def show():
+                    h = str(ent.get())
+                    a = ""
+                    b = []
+                    for i in range(0,len(h)):
+                        if(h[i]!=","):
+                            a = a + h[i]
+                        elif (h[i]==','):
+                            b.append(a)
+                            a = ""
+                    for i1 in b: 
+                        j = 0  
+                        while j < sheet.nrows:
+                            i = 6
+                            if sheet.cell_value(j,2).upper() == i1.upper():
+                                #to store the death/confirmed cases for every day
+                                a1 = []
+                                #to store the number of days
+                                b1  = []
+                                while i < sheet.ncols:
+                                    a1.append(int(sheet.cell_value(j,i)))
+                                    b1.append(int(i-4))
+                                    i = i + 1
+                                if int(var3.get()) == 1:
+                                    #plotting a line graph for the same
+                                    plt.plot(b1,a1,label= i1)
+                                elif int(var2.get()) ==  1:
+                                    plt.bar(b1,a1,label = i1)
+                                plt.xlabel('DAY')
+                                plt.ylabel('DEATHS')
+                                plt.legend()
+                            j = j + 1
+                    plt.title(b)
+                    plt.show()  
+                tkinter.Button(window2,text = "ENTER",bg = "cyan2",command = show).place( x = 260 , y = 200)
+                window2.mainloop()
             tkinter.Button(window,text = "ENTER",bg = "cyan2",command = showwwac).place( x = 260 , y = 200)
             window.mainloop()
         tkinter.Button(window2,text = "CURVE OF RECOVERED CASES PER DAY",bg = "green",command = coc2).place(x = 180 , y = 160)
@@ -367,6 +467,7 @@ try:
         canvas.create_image( 199, 124 ,image = image)
         canvas.place(x = 0, y = 0)
         #this function here is to show the condition of the country
+        
         def country():
             window2.destroy()
             window = tkinter.Tk()
