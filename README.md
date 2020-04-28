@@ -1,11 +1,11 @@
-### COVID-19-TRACKER
+# COVID-19-TRACKER
 **ANALYSIS BY YASHARTH DUBEY**
 
 <img
 src="https://img.shields.io/travis/soroushchehresa/awesome-coronavirus" alt="build status"> [<img src="https://img.shields.io/badge/sponsors-become%20a%20sponsor-blueviolet">](#donation-and-sponsoring)
 
 ## COVID-19 DATA ANALYSIS FOR EDUCATION PURP0SES
-# PROBLEMS SELECTED:
+### PROBLEMS SELECTED:
 
 1.	Identity the countries as HIGH RISK TRAVEL destination countries for Internship or Project work for next two years.
 Draw a trend graph of death growing rate for that country . The graph may
@@ -21,7 +21,7 @@ c)	Average number of death cases reported week wise.
 
  
 
-# PURPOSE OF RESEARCH: -
+### PURPOSE OF RESEARCH: -
 
 1.	To find out those countries which are at high risk for travel destination for students for internships. So, they can avoid travelling to those countries for next two years.
 
@@ -31,7 +31,7 @@ c)	Average number of death cases reported week wise.
 
 4.	To find out the average number of deaths cases reported every week. 
 
-# IMPORTANT OBSERVATION FOUND IN DATA STUDY: -
+### IMPORTANT OBSERVATION FOUND IN DATA STUDY: -
 
 1.	After looking at data for counting confirmed, death cases country wise we observed that Nowadays U.S.A. is at very high risk having more than 7 lakhs of active cases. And having more than 50 thousand of deaths. And it has become unsafe country
 2.	So, our second observation was about the day wise data for deaths per confirmed cases. As you can see the graph below which is 
@@ -97,7 +97,7 @@ So, these were the observation we found out from the data study.
  
 
 
-#  Data files and it’s references: -
+###  Data files and it’s references: -
 
 1.	recovered time series: https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv
 
@@ -110,7 +110,7 @@ So, these were the observation we found out from the data study.
 
 4.	 Count: https://www.worldometers.info/coronavirus 
 
-# Data types or data structures used: -
+### Data types or data structures used: -
 
 1.	list.
 2.	Strings
