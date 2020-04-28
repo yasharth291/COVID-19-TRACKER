@@ -155,4 +155,6 @@ So, these are top 10 most risky travel destination countries for internships or 
 So, students are advice to avoid travelling to these countries.  
 
 
-@CSSEGISandData **THANKS YOU FOR PROVIDING DATA**
+@github/CSSEGISandData 
+
+**THANKS YOU FOR PROVIDING DATA**
