@@ -14,11 +14,11 @@ or mortality).
 
 2.	Find:
  
- a)	Average number of cases confirmed week wise.
+a)	Average number of cases confirmed week wise.
  
- b)	Average number of cases cured week wise. 
+b)	Average number of cases cured week wise. 
  
- c)	Average number of death cases reported week wise.
+c)	Average number of death cases reported week wise.
 
 3.  To estimate the chances of infection according to the answered set of questions.
 
