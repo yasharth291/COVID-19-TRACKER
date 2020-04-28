@@ -1,5 +1,6 @@
 # COVID-19-TRACKER
 **ANALYSIS BY YASHARTH DUBEY**
+
 <img
 src="https://img.shields.io/travis/soroushchehresa/awesome-coronavirus" alt="build status"> [<img src="https://img.shields.io/badge/sponsors-become%20a%20sponsor-blueviolet">](#donation-and-sponsoring)
 
@@ -35,7 +36,7 @@ IMPORTANT OBSERVATION FOUND IN DATA STUDY: -
  
 We can compare the data of different countries with these feature its death/confirm rate per day and what we can see is graph for all the countries are showing an upward trend except of 3 countries which are South Korea, Japan and China. Now let us talk about our country which is India the graph of India is given below to study the data more efficiently 
 
- 
+ ![GitHub Logo](/images/logo.png)
 
 So, for a detailed study we have plotted the bar graph what we are seeing here is that there is very little growth. After the Nazimuddin jamaat incident on 27/03/2020 after 5 days of this there was a tremendous growth in the confirmed cases due to which the death per confirmed cases went low and after 7 days of it, it again starts to go upward as the death increased due to this. As we can see the lockdown was not obeyed by the people which resulted in the increase in confirmed cases, we can see this trend after seeing the week wise data below.
  
