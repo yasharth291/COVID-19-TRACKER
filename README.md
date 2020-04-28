@@ -36,12 +36,12 @@ c)	Average number of death cases reported week wise.
 1.	After looking at data for counting confirmed, death cases country wise we observed that Nowadays U.S.A. is at very high risk having more than 7 lakhs of active cases. And having more than 50 thousand of deaths. And it has become unsafe country
 2.	So, our second observation was about the day wise data for deaths per confirmed cases. As you can see the graph below which is 
 
-![graph1]("https/github.com/yasharth291/COVID-19-TRACKER/blob/master/graph1.bmp")
+![graph1]("github.com/yasharth291/COVID-19-TRACKER/blob/master/graph1.bmp")
 We can compare the data of different countries with these feature its death/confirm rate per day and what we can see is graph for all the countries are showing an upward trend except of 3 countries which are South Korea, Japan and China. Now let us talk about our country which is India the graph of India is given below to study the data more efficiently 
 
 
 
-So, for a detailed study we have plotted the bar graph what we are seeing here is that there is very little growth. After the Nazimuddin jamaat incident on 27/03/2020 after 5 days of this there was a tremendous growth in the confirmed cases due to which the death per confirmed cases went low and after 7 days of it, it again starts to go upward as the death increased due to this. As we can see the lockdown was not obeyed by the people which resulted in the increase in confirmed cases, we can see this trend after seeing the week wise data below.
+So, for a detailed study we have plotted the bar graph what we are seeing here is that there is very little growth. After **the Nazimuddin jamaat incident on 27/03/2020 after 5 days of this there was a tremendous growth in the confirmed cases due to which the death per confirmed cases went low and after 7 days of it, it again starts to go upward as the death increased due to this.** As we can see the lockdown was not obeyed by the people which resulted in the increase in confirmed cases, we can see this trend after seeing the week wise data below.
  
 This is showing us the trend of confirmed cases in the country we can see sharp growth in the data in week 9 it was the week were the Nazimuddin incident happened. Now we should see the confirmed cases of the worst hit country which is US.
        
@@ -82,7 +82,8 @@ INDIA: 7.19*
 
 BELGIUM: 1.54
 
-The countries with higher number of active cases are hard to predict but the low recovery rate of the countries like Spain, Belgium, Italy, and US is showing us that we need to invest more in developing our health care than to prepare weapons for war NOW WE SHOULD UNDERSTAND THAT WE CANT KILL A VIRUS BY NUCLEAR WEAPON.
+The countries with higher number of active cases are hard to predict but the low recovery rate of the countries like Spain, Belgium, Italy, and US is showing us that we need to invest more in developing our health care than to prepare weapons for war **NOW WE SHOULD UNDERSTAND THAT WE CANT KILL A VIRUS BY NUCLEAR WEAPON.**
+
 If we see the continent wise break up then the rank would be:
 1. NORTH AMERICA
 2. EUROPE
@@ -90,6 +91,8 @@ If we see the continent wise break up then the rank would be:
 4. SOUTH AMERICA
 5. AUSTRALIA AND OCEANIA 
 6. AFRICA 
+
+
 The trend which will amaze us is that the epicentre of the pandemic was Asia and still it is in 3rd place. As it is an air borne disease. It should spread largely in poor countries but Africa is still in the last this shows us that the continent which are densely populated are more affected by it.
 So, these were the observation we found out from the data study.
  
