@@ -39,7 +39,7 @@ or mortality).
 1.	After looking at data for counting confirmed, death cases country wise we observed that Nowadays U.S.A. is at very high risk having more than 7 lakhs of active cases. And having more than 50 thousand of deaths. And it has become unsafe country
 2.	So, our second observation was about the day wise data for deaths per confirmed cases. As you can see the graph below which is 
 
-![graph1]("/graph1.bmp")
+![graph1](graph1.bmp)
 We can compare the data of different countries with these feature its death/confirm rate per day and what we can see is graph for all the countries are showing an upward trend except of 3 countries which are South Korea, Japan and China. Now let us talk about our country which is India the graph of India is given below to study the data more efficiently 
 
 
