@@ -1,7 +1,7 @@
 # COVID-19-TRACKER
 **ANALYSIS BY YASHARTH DUBEY**
-[<img
-src="https://img.shields.io/travis/soroushchehresa/awesome-coronavirus" alt="build status"> ][<img src="https://img.shields.io/badge/sponsors-become%20a%20sponsor-blueviolet">](#donation-and-sponsoring)
+<img
+src="https://img.shields.io/travis/soroushchehresa/awesome-coronavirus" alt="build status"> [<img src="https://img.shields.io/badge/sponsors-become%20a%20sponsor-blueviolet">](#donation-and-sponsoring)
 
 COVID-19 DATA ANALYSIS FOR EDUCATION PURP0SES
 PROBLEMS SELECTED:
