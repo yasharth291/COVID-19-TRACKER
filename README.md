@@ -1,6 +1,6 @@
 # COVID-19-TRACKER
 **ANALYSIS BY YASHARTH DUBEY**
-
+<img
 src="https://img.shields.io/travis/soroushchehresa/awesome-coronavirus" alt="build status"> [<img src="https://img.shields.io/badge/sponsors-become%20a%20sponsor-blueviolet">](#donation-and-sponsoring)
 
 COVID-19 DATA ANALYSIS FOR EDUCATION PURP0SES
@@ -61,7 +61,7 @@ We are now going to talk about the graphical data of Recovered cases in India, J
 
 We can see here that the recovered patients are growing everywhere but the rate with which countries are recovering are more in European countries.
 Below is the calculated recovery rate* of some countries:
-US: 2.17 recoveries per death//
+US: 2.17 recoveries per death
 SPAIN: 4.71
 ITALY: 2.39
 GERMANY: 18.68
