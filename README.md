@@ -7,7 +7,7 @@ src="https://img.shields.io/travis/soroushchehresa/awesome-coronavirus" alt="bui
 ## COVID-19 DATA ANALYSIS FOR EDUCATION PURP0SES
 ### PROBLEMS SELECTED:
 
-1.	Identity the countries as HIGH RISK TRAVEL destination countries for Internship or Project work for next two years.
+1.	Identity the countries as <p>HIGH RISK TRAVEL <span style="color:red">some <em>red</em> text</span>.</p> destination countries for Internship or Project work for next two years.
 Draw a trend graph of death growing rate for that country . The graph may
 change as the data set is dynamic. Collect the death growing rate (fatality
 or mortality).
