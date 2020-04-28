@@ -80,31 +80,31 @@ We are now going to talk about the graphical data of Recovered cases in India, J
 We can see here that the recovered patients are growing everywhere but the rate with which countries are recovering are more in European countries.
 Below is the calculated recovery rate of some countries:
 
-US: 2.17 
+**US: 2.17 **
 
-SPAIN: 4.71
+**SPAIN: 4.71
 
-ITALY: 2.39
+**ITALY: 2.39
 
-GERMANY: 18.68
+**GERMANY: 18.68
 
-SOUTH KOREA: 36.020
+**SOUTH KOREA: 36.020
 
-JAPAN: 4.6
+**JAPAN: 4.6
 
-INDIA: 7.19
+**INDIA: 7.19
 
-BELGIUM: 1.54
+**BELGIUM: 1.54
 
 The countries with higher number of active cases are hard to predict but the low recovery rate of the countries like Spain, Belgium, Italy, and US is showing us that we need to invest more in developing our health care than to prepare weapons for war **NOW WE SHOULD UNDERSTAND THAT WE CANT KILL A VIRUS BY NUCLEAR WEAPON.**
 
 If we see the continent wise break up then the rank would be:
-1. NORTH AMERICA
-2. EUROPE
-3. ASIA
-4. SOUTH AMERICA
-5. AUSTRALIA AND OCEANIA 
-6. AFRICA 
+1. **NORTH AMERICA
+2. **EUROPE
+3. **ASIA
+4. **SOUTH AMERICA
+5. **AUSTRALIA AND OCEANIA 
+6. **AFRICA 
 
 
 The trend which will amaze us is that the epicentre of the pandemic was Asia and still it is in 3rd place. As it is an air borne disease. It should spread largely in poor countries but Africa is still in the last this shows us that the continent which are densely populated are more affected by it.
