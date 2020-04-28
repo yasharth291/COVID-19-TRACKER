@@ -1,11 +1,11 @@
-# COVID-19-TRACKER
+### COVID-19-TRACKER
 **ANALYSIS BY YASHARTH DUBEY**
 
 <img
 src="https://img.shields.io/travis/soroushchehresa/awesome-coronavirus" alt="build status"> [<img src="https://img.shields.io/badge/sponsors-become%20a%20sponsor-blueviolet">](#donation-and-sponsoring)
 
-COVID-19 DATA ANALYSIS FOR EDUCATION PURP0SES
-PROBLEMS SELECTED:
+## COVID-19 DATA ANALYSIS FOR EDUCATION PURP0SES
+# PROBLEMS SELECTED:
 
 1.	Identity the countries as HIGH RISK TRAVEL destination countries for Internship or Project work for next two years.
 Draw a trend graph of death growing rate for that country . The graph may
@@ -21,7 +21,7 @@ c)	Average number of death cases reported week wise.
 
  
 
-PURPOSE OF RESEARCH: -
+# PURPOSE OF RESEARCH: -
 
 1.	To find out those countries which are at high risk for travel destination for students for internships. So, they can avoid travelling to those countries for next two years.
 
@@ -30,10 +30,13 @@ PURPOSE OF RESEARCH: -
 3.	To find out the Average number of cases cured every week ,so that we can know how to control  its  spreading .
 
 4.	To find out the average number of deaths cases reported every week. 
-IMPORTANT OBSERVATION FOUND IN DATA STUDY: -
+
+# IMPORTANT OBSERVATION FOUND IN DATA STUDY: -
+
 1.	After looking at data for counting confirmed, death cases country wise we observed that Nowadays U.S.A. is at very high risk having more than 7 lakhs of active cases. And having more than 50 thousand of deaths. And it has become unsafe country
 2.	So, our second observation was about the day wise data for deaths per confirmed cases. As you can see the graph below which is 
-![graph1]("yasharth291/COVID-19-TRACKER/blob/master/graph1.bmp")
+
+![graph1]("https/github.com/yasharth291/COVID-19-TRACKER/blob/master/graph1.bmp")
 We can compare the data of different countries with these feature its death/confirm rate per day and what we can see is graph for all the countries are showing an upward trend except of 3 countries which are South Korea, Japan and China. Now let us talk about our country which is India the graph of India is given below to study the data more efficiently 
 
 
@@ -62,14 +65,23 @@ We are now going to talk about the graphical data of Recovered cases in India, J
 
 We can see here that the recovered patients are growing everywhere but the rate with which countries are recovering are more in European countries.
 Below is the calculated recovery rate* of some countries:
+
 US: 2.17 recoveries per death
+
 SPAIN: 4.71
+
 ITALY: 2.39
+
 GERMANY: 18.68
+
 SOUTH KOREA: 36.020
-JAPAN: 4.6*line//break
+
+JAPAN: 4.6*
+
 INDIA: 7.19*
+
 BELGIUM: 1.54
+
 The countries with higher number of active cases are hard to predict but the low recovery rate of the countries like Spain, Belgium, Italy, and US is showing us that we need to invest more in developing our health care than to prepare weapons for war NOW WE SHOULD UNDERSTAND THAT WE CANT KILL A VIRUS BY NUCLEAR WEAPON.
 If we see the continent wise break up then the rank would be:
 1. NORTH AMERICA
@@ -85,7 +97,7 @@ So, these were the observation we found out from the data study.
  
 
 
-  Data files and it’s references: -
+#  Data files and it’s references: -
 
 1.	recovered time series: https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv
 
@@ -97,7 +109,8 @@ So, these were the observation we found out from the data study.
 
 
 4.	 Count: https://www.worldometers.info/coronavirus 
-Data types or data structures used: -
+
+# Data types or data structures used: -
 
 1.	list.
 2.	Strings
