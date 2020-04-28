@@ -14,11 +14,11 @@ or mortality).
 
 2.	Find:
  
-a)	Average number of cases confirmed week wise.
+       a)	Average number of cases confirmed week wise.
  
-b)	Average number of cases cured week wise. 
+       b)	Average number of cases cured week wise. 
  
-c)	Average number of death cases reported week wise.
+       c)	Average number of death cases reported week wise.
 
 3.  To estimate the chances of infection according to the answered set of questions.
 
@@ -67,9 +67,9 @@ We are now going to talk about the graphical data of Recovered cases in India, J
  
 
 We can see here that the recovered patients are growing everywhere but the rate with which countries are recovering are more in European countries.
-Below is the calculated recovery rate* of some countries:
+Below is the calculated recovery rate of some countries:
 
-US: 2.17 recoveries per death
+US: 2.17 
 
 SPAIN: 4.71
 
@@ -79,9 +79,9 @@ GERMANY: 18.68
 
 SOUTH KOREA: 36.020
 
-JAPAN: 4.6*
+JAPAN: 4.6
 
-INDIA: 7.19*
+INDIA: 7.19
 
 BELGIUM: 1.54
 
