@@ -51,22 +51,28 @@ So, for a detailed study we have plotted the bar graph what we are seeing here i
  
 This is showing us the trend of confirmed cases in the country we can see sharp growth in the data in week 9 it was the week were the Nazimuddin incident happened. Now we should see the confirmed cases of the worst hit country which is US.
        
+![graph3](graph3.bmp)
+
 What we can see is the week wise confirmed cases in us were not showing a regular trend but rather a high low high low trend.
 Now we should talk about the week wise deaths in countries so as we can see that here also the worst hit country is US. Let us see the data for it. 
 
- 
+![graph4](graph4.bmp)
 
 What we see in the above data is the deaths are more than any other country and the rate by which it is going up is very alarming one main observation which we can take out is the that in us the patients in the age group of 45-85 are highest which is causing the death to be more and one more observation we get is the immunity of the people in the west is much lower than in the east. That is why it is said not to eat packed food.   
 
+![graph5](graph5.bmp)
+
 Now we are talking about the data of India we should take a look below 
- 
+
+![graph6](graph6.bmp)
+
 What we can see here is the data trends show us that the death in India is pretty low and not only India but same is for japan and South Korea (**we are not including china as the data provided by Chinese media are questionable**). What we can conclude from this week wise death data is the death depends on the age group and immunity of the person and the Asian continent has registered low number of deaths because of the high immunity power and having a large number of cases in the age between 15-25. Some countries in Europe are also handling the problem very well namely France and Germany. 
 
 
 We are now going to talk about the graphical data of Recovered cases in India, Japan, South Korea, US, Germany, Belgium, Italy and Spain.
 
 
-   
+![graph7](graph7.bmp)   
  
 
 We can see here that the recovered patients are growing everywhere but the rate with which countries are recovering are more in European countries.
