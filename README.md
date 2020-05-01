@@ -16,6 +16,7 @@ or mortality).
 
 
 2.	Find:
+           
            a)	The average number of cases confirmed week wise.
            
            b)	The average number of instances cured week wise. 
