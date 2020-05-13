@@ -869,7 +869,7 @@ try:
                             sum = sum + float(sheet.cell_value(i,q+7))-float(sheet.cell_value(i,q))
                             q = q + 7
                             j = j + 1
-                            sum = sum/7.0
+                            sum = int(sum/7.0)
                             sum = str(sum)
                             a.append(sum)
                         o = 1
@@ -937,7 +937,7 @@ try:
                             sum = sum + float(sheet.cell_value(i,q+7))-float(sheet.cell_value(i,q))
                             q = q + 7
                             j = j + 1
-                            sum = sum/7.0
+                            sum = int(sum/7.0)
                             sum = str(sum)
                             a.append(sum)
                         o = 1
@@ -1005,7 +1005,7 @@ try:
                             sum = sum + float(sheet.cell_value(i,q+7))-float(sheet.cell_value(i,q))
                             q = q + 7
                             j = j + 1
-                            sum = sum/7.0
+                            sum = int(sum/7.0)
                             sum = str(sum)
                             a.append(sum)
                         o = 1
