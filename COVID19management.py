@@ -92,8 +92,6 @@ try:
                 loc1  = ("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/Confirmed.xlsx")
                 wb1 = xlrd.open_workbook(loc1)
                 sheet1 = wb1.sheet_by_index(0)
-                print(int(var1.get()))
-                print(int(var2.get()))
                 window.destroy()
                 window2 = tkinter.Tk()
                 window2.resizable(0,0)
@@ -141,6 +139,7 @@ try:
                                 plt.xlabel('DAY')
                                 plt.ylabel('DEATH/CONFIRMED CASES')
                                 plt.legend()
+                                plt.text(0.08, 0.2, i)
                             j = j + 1
                     plt.title(b)
                     plt.show()  
@@ -368,7 +367,7 @@ try:
                                 elif int(var2.get()) ==  1:
                                     plt.bar(b1,a1,label = i1)
                                 plt.xlabel('DAY')
-                                plt.ylabel('DEATHS')
+                                plt.ylabel('CONFIRMED')
                                 plt.legend()
                             j = j + 1
                     plt.title(b)
@@ -434,7 +433,10 @@ try:
                                 #to store the number of days
                                 b1  = []
                                 while i < sheet.ncols:
-                                    a1.append(int(sheet.cell_value(j,i)))
+                                    if(int(sheet1.cell_value(j,i))!=0):
+                                        a1.append(float(sheet.cell_value(j,i)))
+                                    else:
+                                        a1.append(0)
                                     b1.append(int(i-4))
                                     i = i + 1
                                 if int(var3.get()) == 1:
@@ -443,7 +445,7 @@ try:
                                 elif int(var2.get()) ==  1:
                                     plt.bar(b1,a1,label = i1)
                                 plt.xlabel('DAY')
-                                plt.ylabel('DEATHS')
+                                plt.ylabel('RECOVERED')
                                 plt.legend()
                             j = j + 1
                     plt.title(b)
@@ -1066,23 +1068,7 @@ try:
             window3 = tkinter.Tk()
             window3.title("COVID-19 TRACKER")
             window3.geometry("400x260")
-            #if he is having less than 2 symptoms the rate according to WHO is low
-            if count < 2:
-                tkinter.Label(window3,text = "LOW RISK OF INFECTION",font = "arial",bg = "green").pack()
-                image = tkinter.PhotoImage(file = "C:\\Users\\yasharth dubey\\Documents\\Python Scripts\\COVID19 management\\0.png")
-                tkinter.Label(window3,image = image).pack()
-            #if the symptom count is above 2 and below 4 the risk of COVID-19 is medium and he may consider a doctor
-            elif count>=2 and count<4:
-                window3.geometry("410x260")
-                tkinter.Label(window3,text = "MEDIUM RISK OF INFECTION",font = "arial",bg = "yellow").pack()
-                image = tkinter.PhotoImage(file = "C:\\Users\\yasharth dubey\\Documents\\Python Scripts\\COVID19 management\\1.png")
-                tkinter.Label(window3,image = image).pack() 
-            #in any other condition the risk is high  
-            else:
-                tkinter.Label(window3,text = "HIGH RISK OF INFECTION",font = "arial",bg = "maroon").pack()
-                image = tkinter.PhotoImage(file = "C:\\Users\\yasharth dubey\\Documents\\Python Scripts\\COVID19 management\\2.png")
-                tkinter.Label(window3,image = image).pack()
-            #there is one more addition in the window which is helpine nunmbers for every country  
+             #there is one more addition in the window which is helpine nunmbers for every country  
             def showlist():
                 r = "https://www.countryliving.com/uk/wildlife/countryside/news/a1553/emergency-numbers-in-countries-abroad/"
                 new = 1
@@ -1090,6 +1076,44 @@ try:
                 webbrowser.open(r,new = new)
             #helpline button to redirect the user to the list of emergency numbers of every country
             tkinter.Button(window3,text = "HELPLINE",border = "0",command = showlist,bg = "brown").place(x=0,y=0)
+            wb = op.load_workbook("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/patiemt.xlsx")
+            ws = wb.get_sheet_by_name("Sheet1")
+            #if he is having less than 2 symptoms the rate according to WHO is low
+            if count < 2:
+                tkinter.Label(window3,text = "LOW RISK OF INFECTION",font = "arial",bg = "green").pack()
+                image = tkinter.PhotoImage(file = "C:\\Users\\yasharth dubey\\Documents\\Python Scripts\\COVID19 management\\0.png")
+                tkinter.Label(window3,image = image).pack()
+                ws.cell(row = 2, column = 1).value  = int(ws.cell(row = 2,column = 1).value) + 1
+            #if the symptom count is above 2 and below 4 the risk of COVID-19 is medium and he may consider a doctor
+            elif count>=2 and count<4:
+                window3.geometry("410x260")
+                tkinter.Label(window3,text = "MEDIUM RISK OF INFECTION",font = "arial",bg = "yellow").pack()
+                image = tkinter.PhotoImage(file = "C:\\Users\\yasharth dubey\\Documents\\Python Scripts\\COVID19 management\\1.png")
+                tkinter.Label(window3,image = image).pack() 
+                ws.cell(row = 2, column = 2).value  = int(ws.cell(row = 2,column = 2).value) + 1
+            #in any other condition the risk is high  
+            else:
+                tkinter.Label(window3,text = "HIGH RISK OF INFECTION",font = "arial",bg = "maroon").pack()
+                image = tkinter.PhotoImage(file = "C:\\Users\\yasharth dubey\\Documents\\Python Scripts\\COVID19 management\\2.png")
+                tkinter.Label(window3,image = image).pack()
+                ws.cell(row = 2, column = 3).value  = int(ws.cell(row = 2,column = 3).value) + 1
+            wb.save("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/patiemt.xlsx")
+            wb.close()
+            a = []
+            b = []
+            loc  = ("C:/Users/yasharth dubey/Documents/Python Scripts/COVID19 management/patiemt.xlsx")
+            wb = xlrd.open_workbook(loc)
+            sheet = wb.sheet_by_index(0)
+            a.append(sheet.cell_value(0,0))
+            a.append(sheet.cell_value(0,1))
+            a.append(sheet.cell_value(0,2))
+            b.append(int(sheet.cell_value(1,0)))
+            b.append(int(sheet.cell_value(1,1)))
+            b.append(int(sheet.cell_value(1,2)))
+            plt.bar(a[0],b[0],label = "RISK",color = "green")
+            plt.bar(a[1],b[1],label = "RISK",color = "yellow")
+            plt.bar(a[2],b[2],label = "RISK",color = "red")
+            plt.show()
             window3.resizable(0,0)
             window3.mainloop()
         tkinter.Button(window2,text = "ENTER",border = "0",bg = "orange",command = county).place(x = 180 , y = 220 )
